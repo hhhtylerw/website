@@ -10,7 +10,7 @@
 	<header class="p-4">
 		<div class="mb-6 w-full sm:w-3/5">
 			<div class="aspect-w-16 rounded-lg aspect-h-9">
-				<img src={data.metadata.imageUrl} alt={data.metadata.title} class="object-cover" />
+				<img src={data.metadata.image} alt={data.metadata.title} class="object-cover" />
 			</div>
 		</div>
 

@@ -1,6 +1,6 @@
 ---
 title: 'Second post'
-imageUrl: '/post-images/cloudflare.gif'
+image: '/post-images/cloudflare.gif'
 description: 'My second post'
 date: '2026-01-28'
 ---

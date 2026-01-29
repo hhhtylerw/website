@@ -16,7 +16,8 @@ const config = {
 		adapter: adapter()
 	},
 	compilerOptions: {
-		runes: true
+		runes: true,
+		warningFilter: (warning) => warning.code !== 'script_context_deprecated'
 	},
 	extensions: ['.svelte', '.md'],
 	preprocess: [mdsvex(mdsvexOptions)]

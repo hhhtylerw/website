@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
+	import { title } from '$lib/config';
 
 	import './layout.css';
 
@@ -9,15 +10,15 @@
 <header class="fixed inset-x-0 top-0 z-10 border-b-2">
 	<nav class="mx-auto flex h-24 max-w-5xl items-center justify-between px-4">
 		<a href={resolve('/')}>
-			<b>Tyler Woodruff</b>
+			<b>{title}</b>
 		</a>
 
-		<div class="flex items-center space-x-1">
+		<div class="flex items-center space-x-4">
 			<a href={resolve('/')}>About</a>
 
 			<a href={resolve('/')}>Contact</a>
 
-			<a href={resolve('/')} target="_blank">RSS</a>
+			<a href={resolve('/rss.xml')} target="_blank">RSS</a>
 		</div>
 	</nav>
 </header>
@@ -32,5 +33,5 @@
 		alt="Dolphin"
 		class=" mx-auto block max-w-full min-w-[50%]"
 	/>
-	<p>Tyler Woodruff &copy {new Date().getFullYear()}</p>
+	<p class="border-2 text-center">{title} &copy {new Date().getFullYear()}</p>
 </footer>

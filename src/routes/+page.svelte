@@ -1,18 +1,21 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import PostItem from '$lib/components/PostItem.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 </script>
 
-<section class="pb-6">
-	<header class="mx-4 mb-4 inline-block py-2">
-		<h2 class="text-3xl font-semibold">Blog Posts</h2>
-	</header>
 
-	<section class="divide-y-2">
-		{#each data.posts as post (post.slug)}
-			<PostItem {post} />
-		{/each}
-	</section>
+<section class="py-4 space-y-0.5">
+	<h3 class="text-lg pb-1">About</h3>
+	<div>I'm Tyler and this is my website. I work as a software engineer at &lt???&gt;.</div>
+	<div>This site will contain posts about work I've done and things that interest me.</div>
+</section>
+
+<section>
+	<h3 class="text-lg pb-1 ">Blog</h3>
+	{#each data.posts as post (post.slug)}
+		<PostItem {post} />
+	{/each}
 </section>

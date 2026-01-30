@@ -7,31 +7,33 @@
 	let { children } = $props();
 </script>
 
-<header class="fixed inset-x-0 top-0 z-10 border-b-2">
-	<nav class="mx-auto flex h-24 max-w-5xl items-center justify-between px-4">
-		<a href={resolve('/')}>
-			<b>{title}</b>
-		</a>
+<main class="mx-auto max-w-5xl">
+	<div class="md:border-2 md:my-8 md:mx-24 p-8">
+		<header>
+			<nav class="mx-auto flex pb-2 max-w-5xl items-center justify-between">
+			<a href={resolve('/')} class="text-2xl font-semibold hover:underline">
+				<b>tyle.rw</b>
+			</a>
 
-		<div class="flex items-center space-x-4">
-			<a href={resolve('/')}>About</a>
+			<div class="flex items-center space-x-4">
+				<button class="hover:underline" onclick={() => alert("Soon.")}>Resume</button>
 
-			<a href={resolve('/')}>Contact</a>
+				<button class="hover:underline" onclick={() => alert("aych aych aych tyler double yew at protonmail.com")}>Contact</button>
 
-			<a href={resolve('/rss.xml')} target="_blank">RSS</a>
-		</div>
-	</nav>
-</header>
-
-<main class="mx-auto max-w-5xl pt-24">
-	{@render children()}
+				<a class="hover:underline" href={resolve('/rss.xml')} target="_blank">RSS</a>
+			</div>
+		</nav>
+		</header>
+		{@render children()}
+	</div>
 </main>
 
-<footer class="mx-auto max-w-5xl">
+<footer class="mx-auto max-w-5xl p-4">
 	<img
 		src="/dolphin-swimming-animation.gif"
 		alt="Dolphin"
 		class=" mx-auto block max-w-full min-w-[50%]"
 	/>
-	<p class="border-2 text-center">{title} &copy {new Date().getFullYear()}</p>
+	<p class="text-center">{title} &copy {new Date().getFullYear()}</p>
 </footer>
+

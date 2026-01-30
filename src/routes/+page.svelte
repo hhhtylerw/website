@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { resolve } from '$app/paths';
 	import PostItem from '$lib/components/PostItem.svelte';
 	import type { PageProps } from './$types';
 

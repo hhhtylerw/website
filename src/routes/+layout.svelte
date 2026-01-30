@@ -8,21 +8,25 @@
 </script>
 
 <main class="mx-auto max-w-5xl">
-	<div class="md:border-2 md:my-8 md:mx-24 p-8">
-		<header>
-			<nav class="mx-auto flex pb-2 max-w-5xl items-center justify-between">
-			<a href={resolve('/')} class="text-2xl font-semibold hover:underline">
-				<b>tyle.rw</b>
-			</a>
+	<div class="p-8 md:mx-24 md:my-8 md:border-2">
+		<header class="pb-4">
+			<nav class="mx-auto flex max-w-5xl items-center justify-between pb-2">
+				<a href={resolve('/')} class="text-2xl font-semibold hover:underline">
+					<b>tyle.rw</b>
+				</a>
 
-			<div class="flex items-center space-x-4">
-				<button class="hover:underline" onclick={() => alert("Soon.")}>Resume</button>
+				<div class="flex items-center space-x-4">
+					<button class="hover:underline" onclick={() => alert('Soon.')}>Resume</button>
 
-				<button class="hover:underline" onclick={() => alert("aych aych aych tyler double yew at protonmail.com")}>Contact</button>
+					<button
+						class="hover:underline"
+						onclick={() => alert('aych aych aych tyler double yew at protonmail.com')}
+						>Contact</button
+					>
 
-				<a class="hover:underline" href={resolve('/rss.xml')} target="_blank">RSS</a>
-			</div>
-		</nav>
+					<a class="hover:underline" href={resolve('/rss.xml')} target="_blank">RSS</a>
+				</div>
+			</nav>
 		</header>
 		{@render children()}
 	</div>
@@ -36,4 +40,3 @@
 	/>
 	<p class="text-center">{title} &copy {new Date().getFullYear()}</p>
 </footer>
-

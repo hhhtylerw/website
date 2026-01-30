@@ -7,7 +7,7 @@
 </script>
 
 <article>
-	<header class="p-4">
+	<header>
 		<div class="mb-6 w-full sm:w-3/5">
 			<div class="aspect-w-16 rounded-lg aspect-h-9">
 				<img src={data.metadata.image} alt={data.metadata.title} class="object-cover" />
@@ -15,20 +15,18 @@
 		</div>
 
 		<div>
-			<h1 class="mb-4 text-4xl font-bold">
+			<h1 class="text-3xl font-bold">
 				{data.metadata.title}
 			</h1>
 
-			<h3>{data.metadata.description}</h3>
-
 			<div class="inline-block py-2">
 				<time datetime={data.metadata.date} class="font-light">
-					{data.metadata.date}
+					&gt;{data.metadata.date}
 				</time>
 			</div>
 		</div>
 	</header>
-	<div class="prose max-w-none p-4">
+	<div class="prose max-w-none">
 		<CopyCodeInjector>
 			<data.post />
 		</CopyCodeInjector>

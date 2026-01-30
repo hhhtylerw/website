@@ -18,7 +18,7 @@
 
 <button
 	bind:this={copyButton}
-	class={`absolute top-2 right-2 rounded-md p-1 shadow-md ${showCheckmark ? 'bg-green-900' : 'bg-gray-700 hover:bg-gray-600'}`}
+	class={`absolute top-2 right-2 rounded-md p-1 shadow-md ${showCheckmark ? 'bg-green-900' : 'bg-gray-800 hover:bg-gray-700'}`}
 	onclick={handleClick}
 >
 	{#if showCheckmark}

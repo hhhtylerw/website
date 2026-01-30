@@ -8,7 +8,7 @@
 </script>
 
 <main class="mx-auto max-w-5xl">
-	<div class="p-8 md:mx-24 md:my-8 md:border-2">
+	<div class="p-4 sm:mx-24 sm:my-8 sm:border-2 md:p-8">
 		<header class="pb-4">
 			<nav class="mx-auto flex max-w-5xl items-center justify-between pb-2">
 				<a href={resolve('/')} class="text-2xl font-semibold hover:underline">

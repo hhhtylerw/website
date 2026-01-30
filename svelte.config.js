@@ -20,12 +20,7 @@ const config = {
 		warningFilter: (warning) => warning.code !== 'script_context_deprecated'
 	},
 	extensions: ['.svelte', '.md'],
-	preprocess: [mdsvex(mdsvexOptions)],
-	kit: {
-		prerender: {
-			handleUnseenRoutes: 'ignore'
-		}
-	}
+	preprocess: [mdsvex(mdsvexOptions)]
 };
 
 export default config;

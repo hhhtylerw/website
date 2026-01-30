@@ -1,8 +1,6 @@
 import * as config from '$lib/config';
 import type { MarkdownPostMetadataAndSlug } from '$lib/types';
 
-export const prerender = true;
-
 export async function GET({ fetch }) {
 	const response = await fetch('/posts');
 	const posts: MarkdownPostMetadataAndSlug[] = await response.json();

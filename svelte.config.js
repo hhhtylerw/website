@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-node';
+import adapter from '@sveltejs/adapter-static';
 
 import { mdsvex } from 'mdsvex';
 
@@ -20,7 +20,12 @@ const config = {
 		warningFilter: (warning) => warning.code !== 'script_context_deprecated'
 	},
 	extensions: ['.svelte', '.md'],
-	preprocess: [mdsvex(mdsvexOptions)]
+	preprocess: [mdsvex(mdsvexOptions)],
+	kit: {
+		prerender: {
+			handleUnseenRoutes: 'ignore'
+		}
+	}
 };
 
 export default config;

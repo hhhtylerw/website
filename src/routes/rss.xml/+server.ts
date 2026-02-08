@@ -11,11 +11,9 @@ export async function GET({ fetch }) {
 	const photographyPosts: MarkdownPostMetadataAndSlug[] = await photographyResponse.json();
 
 	const posts = [
-		...blogPosts.map(post => ({ ...post, postType: 'blog' })),
-		...photographyPosts.map(post => ({ ...post, postType: 'photography' }))
-	].sort((a, b) => 
-		new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
-	);
+		...blogPosts.map((post) => ({ ...post, postType: 'blog' })),
+		...photographyPosts.map((post) => ({ ...post, postType: 'photography' }))
+	].sort((a, b) => new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime());
 
 	const headers = { 'Content-Type': 'application/xml' };
 

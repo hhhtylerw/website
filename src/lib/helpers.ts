@@ -17,8 +17,6 @@ export async function getPosts(postsType: MarkdownPostType) {
 		>;
 	}
 
-	console.log(postsType, markdownPostModules);
-
 	const postPromises: Promise<MarkdownPostMetadataAndSlug>[] = [];
 
 	for (const path in markdownPostModules) {

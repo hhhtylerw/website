@@ -10,7 +10,10 @@ export async function GET({ fetch }) {
 	const blogPosts: MarkdownPostMetadataAndSlug[] = await blogResponse.json();
 	const photographyPosts: MarkdownPostMetadataAndSlug[] = await photographyResponse.json();
 
-	const posts = [...blogPosts, ...photographyPosts].sort((a, b) => 
+	const posts = [
+		...blogPosts.map(post => ({ ...post, postType: 'blog' })),
+		...photographyPosts.map(post => ({ ...post, postType: 'photography' }))
+	].sort((a, b) => 
 		new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
 	);
 
@@ -29,8 +32,8 @@ export async function GET({ fetch }) {
 						<item>
 							<title>${post.metadata.title}</title>
 							<description>${post.metadata.description}</description>
-							<link>${config.url}/${post.slug}</link>
-							<guid isPermaLink="true">${config.url}/${post.slug}</guid>
+							<link>${config.url}/${post.postType}/${post.slug}</link>
+							<guid isPermaLink="true">${config.url}/${post.postType}/${post.slug}</guid>
 							<pubDate>${new Date(post.metadata.date).toUTCString()}</pubDate>
 						</item>
 					`

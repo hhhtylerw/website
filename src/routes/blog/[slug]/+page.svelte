@@ -1,5 +1,5 @@
 <script lang="ts">
-	import './prism-theme.css';
+	import '$lib/prism-theme.css';
 	import type { PageProps } from './$types';
 	import CopyCodeInjector from '$lib/components/CopyCodeInjector.svelte';
 

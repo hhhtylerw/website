@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { resolve } from '$app/paths';
 	import '$lib/prism-theme.css';
 	import type { PageProps } from './$types';
 
@@ -25,7 +26,20 @@
 
 	<div class="flex flex-wrap justify-center gap-2">
 		{#each data.metadata.images as image (image)}
-			<img src={image} alt="" class="h-[171px] w-[228px] object-cover" />
+			<div class="group relative">
+				<a href={resolve(`/photography/photos/${image}`)} target="_blank">
+					<img
+						src={`/photography/photos/${image}`.replace('.', '_thumb.')}
+						alt=""
+						class="h-[171px] w-[228px] object-cover"
+					/>
+					<div
+						class="absolute inset-0 flex items-center justify-center bg-black/50 text-sm text-white opacity-0 transition-opacity group-hover:opacity-100"
+					>
+						Click to enlarge
+					</div>
+				</a>
+			</div>
 		{/each}
 	</div>
 </article>

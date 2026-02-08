@@ -4,8 +4,15 @@ import type { MarkdownPostMetadataAndSlug } from '$lib/types';
 export const prerender = true;
 
 export async function GET({ fetch }) {
-	const response = await fetch('/blog/posts.json');
-	const posts: MarkdownPostMetadataAndSlug[] = await response.json();
+	const blogResponse = await fetch('/blog/posts.json');
+	const photographyResponse = await fetch('/photography/posts.json');
+
+	const blogPosts: MarkdownPostMetadataAndSlug[] = await blogResponse.json();
+	const photographyPosts: MarkdownPostMetadataAndSlug[] = await photographyResponse.json();
+
+	const posts = [...blogPosts, ...photographyPosts].sort((a, b) => 
+		new Date(b.metadata.date).getTime() - new Date(a.metadata.date).getTime()
+	);
 
 	const headers = { 'Content-Type': 'application/xml' };
 

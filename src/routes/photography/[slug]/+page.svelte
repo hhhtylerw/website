@@ -1,19 +1,12 @@
 <script lang="ts">
 	import '$lib/prism-theme.css';
 	import type { PageProps } from './$types';
-	import CopyCodeInjector from '$lib/components/CopyCodeInjector.svelte';
 
 	let { data }: PageProps = $props();
 </script>
 
 <article>
 	<header>
-		<div class="mb-6 w-full sm:w-3/5">
-			<div class="aspect-w-16 rounded-lg aspect-h-9">
-				<img src={data.metadata.image} alt={data.metadata.title} class="object-cover" />
-			</div>
-		</div>
-
 		<div>
 			<h1 class="text-3xl font-bold">
 				{data.metadata.title}
@@ -27,8 +20,12 @@
 		</div>
 	</header>
 	<div class="prose max-w-none">
-		<CopyCodeInjector>
-			<data.post />
-		</CopyCodeInjector>
+		<data.post />
+	</div>
+
+	<div class="flex flex-wrap justify-center gap-2">
+		{#each data.metadata.images as image (image)}
+			<img src={image} alt="" class="h-[171px] w-[228px] object-cover" />
+		{/each}
 	</div>
 </article>

@@ -7,6 +7,7 @@ export type MarkdownPost = {
 	metadata: {
 		title: string;
 		image: string;
+		images: string[];
 		description: string;
 		date: string;
 	};

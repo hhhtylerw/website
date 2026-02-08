@@ -1,14 +1,25 @@
-import type { BlogPostMetadataAndSlug } from '$lib/types';
-import { json, type RequestHandler } from '@sveltejs/kit';
+import type { MarkdownPostMetadataAndSlug, MarkdownPostType } from '$lib/types';
+import { json } from '@sveltejs/kit';
 
-export const GET: RequestHandler = async () => {
+export async function getPosts(postsType: MarkdownPostType) {
 	// use vite glob import to get all markdown posts
-	const markdownPostModules = import.meta.glob('/src/lib/posts/blog/*') as Record<
-		string,
-		() => Promise<BlogPostMetadataAndSlug>
-	>;
+	let markdownPostModules;
 
-	const postPromises: Promise<BlogPostMetadataAndSlug>[] = [];
+	if (postsType === 'blog') {
+		markdownPostModules = import.meta.glob('/src/lib/posts/blog/*') as Record<
+			string,
+			() => Promise<MarkdownPostMetadataAndSlug>
+		>;
+	} else {
+		markdownPostModules = import.meta.glob('/src/lib/posts/photography/*') as Record<
+			string,
+			() => Promise<MarkdownPostMetadataAndSlug>
+		>;
+	}
+
+	console.log(postsType, markdownPostModules);
+
+	const postPromises: Promise<MarkdownPostMetadataAndSlug>[] = [];
 
 	for (const path in markdownPostModules) {
 		const loadMarkdownPostModule = markdownPostModules[path];
@@ -38,4 +49,4 @@ export const GET: RequestHandler = async () => {
 	});
 
 	return json(sortedPosts);
-};
+}

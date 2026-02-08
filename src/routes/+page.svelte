@@ -11,9 +11,16 @@
 	<div>This site will contain posts about work I've done and things that interest me.</div>
 </section>
 
-<section>
+<section class="pb-4">
 	<h3 class="pb-1 text-lg">Blog</h3>
-	{#each data.posts as post (post.slug)}
-		<PostItem {post} />
+	{#each data.blogPosts as post (post.slug)}
+		<PostItem {post} postType="blog" />
+	{/each}
+</section>
+
+<section>
+	<h3 class="pb-1 text-lg">Photography</h3>
+	{#each data.photographyPosts as post (post.slug)}
+		<PostItem {post} postType="photography" />
 	{/each}
 </section>

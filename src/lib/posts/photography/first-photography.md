@@ -1,8 +1,8 @@
 ---
-title: 'Why you need a first post'
+title: 'Why you need photography'
 image: '/post-images/cloudflare.gif'
-description: 'Understating the importance of a first post'
-date: '2026-01-27'
+description: 'Understating the importance of photography'
+date: '2026-02-07'
 ---
 
 ## Markdown

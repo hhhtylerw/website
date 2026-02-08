@@ -1,6 +1,8 @@
 import type { Component } from 'svelte';
 
-export type BlogPost = {
+export type MarkdownPostType = 'blog' | 'photography';
+
+export type MarkdownPost = {
 	slug: string;
 	metadata: {
 		title: string;
@@ -11,7 +13,7 @@ export type BlogPost = {
 	default: Component;
 };
 
-export type BlogPostMetadataAndSlug = {
+export type MarkdownPostMetadataAndSlug = {
 	slug: string;
-	metadata: BlogPost['metadata'];
+	metadata: MarkdownPost['metadata'];
 };

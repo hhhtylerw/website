@@ -11,7 +11,7 @@
 			&gt;{post.metadata.date}
 		</time>
 	</div>
-	<a href={resolve(`/posts/${post.slug}`)} class="hover:underline" style="color: aqua;"
+	<a href={resolve(`/blog/${post.slug}`)} class="hover:underline" style="color: aqua;"
 		>{post.metadata.title}</a
 	>
 </article>

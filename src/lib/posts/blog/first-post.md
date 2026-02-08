@@ -1,5 +1,5 @@
 ---
-title: 'Why you need a first post'
+title: 'Placeholder blog post'
 image: '/post-images/cloudflare.gif'
 description: 'Understating the importance of a first post'
 date: '2026-01-27'

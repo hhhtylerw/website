@@ -1,6 +1,6 @@
 #!/bin/bash
 INPUT_DIR="static/photography-input"
-OUTPUT_DIR="static/photography"
+OUTPUT_DIR="static/photography/photos/2026-02-07"
 
 if [ ! -d "$INPUT_DIR" ]; then
     echo "Error: $INPUT_DIR does not exist" >&2

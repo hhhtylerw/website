@@ -1,10 +1,10 @@
-import type { MarkdownPost } from '$lib/types';
+import type { BlogPost } from '$lib/types';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ params }) => {
 	const slug = params.slug;
 
-	const markdownPost: MarkdownPost = await import(`../../../posts/${slug}.md`);
+	const markdownPost: BlogPost = await import(`../../../lib/posts/blog/${slug}.md`);
 
 	return {
 		metadata: markdownPost.metadata,

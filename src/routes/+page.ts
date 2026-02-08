@@ -1,4 +1,4 @@
-import type { MarkdownPostMetadataAndSlug } from '$lib/types';
+import type { BlogPostMetadataAndSlug } from '$lib/types';
 import type { PageLoad } from './$types';
 
 export const load: PageLoad = async ({ fetch }) => {
@@ -6,7 +6,7 @@ export const load: PageLoad = async ({ fetch }) => {
 	const response = await fetch('/posts');
 
 	// get posts from response
-	const posts: MarkdownPostMetadataAndSlug[] = await response.json();
+	const posts: BlogPostMetadataAndSlug[] = await response.json();
 
 	return {
 		posts

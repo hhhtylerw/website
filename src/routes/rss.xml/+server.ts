@@ -1,9 +1,9 @@
 import * as config from '$lib/config';
-import type { MarkdownPostMetadataAndSlug } from '$lib/types';
+import type { BlogPostMetadataAndSlug } from '$lib/types';
 
 export async function GET({ fetch }) {
 	const response = await fetch('/posts');
-	const posts: MarkdownPostMetadataAndSlug[] = await response.json();
+	const posts: BlogPostMetadataAndSlug[] = await response.json();
 
 	const headers = { 'Content-Type': 'application/xml' };
 

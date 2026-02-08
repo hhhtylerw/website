@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { resolve } from '$app/paths';
-	import type { MarkdownPostMetadataAndSlug } from '$lib/types';
+	import type { BlogPostMetadataAndSlug } from '$lib/types';
 
-	let { post }: { post: MarkdownPostMetadataAndSlug } = $props();
+	let { post }: { post: BlogPostMetadataAndSlug } = $props();
 </script>
 
 <article class="flex space-x-4 pb-0.5">
